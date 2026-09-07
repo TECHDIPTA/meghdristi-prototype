@@ -1,0 +1,342 @@
+/* ================================
+   TOPBAR
+================================ */
+
+.topbar {
+  width: 100%;
+  min-height: 94px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 36px;
+
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #e5eaf1;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* ================================
+   MOBILE MENU
+================================ */
+
+.mobile-menu-space {
+  display: contents;
+}
+
+.menu-btn {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #132238;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menu-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.menu-btn:active {
+  transform: scale(0.95);
+}
+
+
+/* ================================
+   TITLE
+================================ */
+
+.topbar-title {
+  min-width: 0;
+}
+
+.topbar-title p {
+  margin: 0 0 5px;
+
+  color: #0ca6a5;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 1.6px;
+  line-height: 1.2;
+}
+
+.topbar-title h1 {
+  margin: 0;
+
+  color: #132238;
+
+  font-family:
+    "Space Grotesk",
+    Inter,
+    system-ui,
+    sans-serif;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+
+/* ================================
+   RIGHT SIDE
+================================ */
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-left: 20px;
+}
+
+
+/* ================================
+   LOCATION
+================================ */
+
+.location-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 12px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  color: #607184;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.location-icon {
+  color: #2563eb;
+  font-size: 10px;
+}
+
+
+/* ================================
+   SYSTEM STATUS
+================================ */
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 12px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 20px;
+
+  background: #ecfdf5;
+  color: #15803d;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.system-status svg {
+  font-size: 7px;
+
+  animation: statusPulse 1.7s ease-in-out infinite;
+}
+
+
+/* ================================
+   STATUS ANIMATION
+================================ */
+
+@keyframes statusPulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+  .topbar {
+    min-height: 82px;
+    padding: 0 20px;
+
+    justify-content: flex-start;
+  }
+
+  .mobile-menu-space {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .menu-btn {
+    display: flex;
+
+    margin-right: 14px;
+  }
+
+  .topbar-title {
+    min-width: 0;
+  }
+
+  .topbar-title p {
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+
+  .topbar-title h1 {
+    font-size: 20px;
+  }
+
+  .topbar-right {
+    margin-left: auto;
+  }
+
+  .location-status {
+    display: none;
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+  .topbar {
+    min-height: 76px;
+    padding: 0 15px;
+  }
+
+  .menu-btn {
+    width: 38px;
+    height: 38px;
+
+    margin-right: 10px;
+
+    font-size: 16px;
+  }
+
+  .topbar-title p {
+    margin-bottom: 3px;
+
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .topbar-title h1 {
+    font-size: 17px;
+    letter-spacing: -0.3px;
+  }
+
+  .system-status {
+    width: 28px;
+    height: 28px;
+
+    justify-content: center;
+
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .system-status span {
+    display: none;
+  }
+
+  .system-status svg {
+    font-size: 7px;
+  }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 400px) {
+  .topbar {
+    padding: 0 12px;
+  }
+
+  .menu-btn {
+    width: 35px;
+    height: 35px;
+
+    margin-right: 8px;
+  }
+
+  .topbar-title p {
+    font-size: 6px;
+    letter-spacing: 0.8px;
+  }
+
+  .topbar-title h1 {
+    font-size: 15px;
+  }
+}
+
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .system-status svg {
+    animation: none;
+  }
+
+  .menu-btn {
+    transition: none;
+  }
+}
