@@ -2,10 +2,10 @@
 /* =========================================================
    SIDEBAR
 ========================================================= */
-
 .sidebar {
   width: 265px;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 0;
 
   position: fixed;
   top: 0;
@@ -31,10 +31,7 @@
   box-shadow:
     8px 0 30px rgba(5, 20, 35, 0.1);
 
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  scrollbar-width: thin;
+  overflow: hidden;
 }
 
 
@@ -165,6 +162,12 @@
   padding-top: 28px;
 
   flex: 1;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
 }
 
 .sidebar-section-title {
@@ -297,12 +300,11 @@
 
 .sidebar-bottom {
   margin-top: auto;
-
   padding-top: 15px;
-
   flex-shrink: 0;
-}
 
+  background: #092b43;
+}
 
 /* =========================================================
    USER BOX
@@ -502,11 +504,11 @@
 @media (max-width: 500px) {
 
   .sidebar {
-    width: min(285px, 85vw);
-
-    padding:
-      16px 12px;
-  }
+  width: min(285px, 85vw);
+  height: 100vh;
+  min-height: 0;
+  padding: 16px 12px;
+}
 
   .sidebar-brand {
     padding:
