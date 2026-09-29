@@ -325,7 +325,6 @@
 .avatar {
   width: 36px;
   height: 36px;
-
   flex-shrink: 0;
 
   display: flex;
@@ -333,21 +332,16 @@
   justify-content: center;
 
   border-radius: 50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #19c9c6,
-      #087f82
-    );
-
-  color: #ffffff;
-
-  font-size: 13px;
-
-  font-weight: 900;
+  overflow: hidden;
+  background: #ffffff;
 }
 
+.avatar img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
 .user-details {
   min-width: 0;
 
@@ -549,4 +543,9 @@
   .close-sidebar {
     transition: none;
   }
+}
+.sidebar-brand .brand-logo {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
 }

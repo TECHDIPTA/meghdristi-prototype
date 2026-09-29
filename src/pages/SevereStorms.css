@@ -6,6 +6,10 @@
   color: #172033;
 }
 
+/* =========================================
+   HEADER
+========================================= */
+
 .storms-header {
   display: flex;
   align-items: flex-start;
@@ -76,7 +80,10 @@
   font-size: 11px;
 }
 
-/* Warning */
+
+/* =========================================
+   WARNING
+========================================= */
 
 .storm-warning {
   display: flex;
@@ -148,7 +155,10 @@
   transform: translateY(-1px);
 }
 
-/* Indicators */
+
+/* =========================================
+   INDICATORS
+========================================= */
 
 .storm-indicator-grid {
   display: grid;
@@ -210,7 +220,10 @@
   font-size: 23px;
 }
 
-/* Main */
+
+/* =========================================
+   MAIN
+========================================= */
 
 .storm-main-grid {
   display: grid;
@@ -249,7 +262,10 @@
   color: #356ae6;
 }
 
-/* Storm map */
+
+/* =========================================
+   STORM MAP
+========================================= */
 
 .storm-map {
   position: relative;
@@ -262,22 +278,40 @@
   position: absolute;
   inset: 0;
   opacity: 0.65;
+
   background-image:
-    linear-gradient(rgba(80, 90, 100, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(80, 90, 100, 0.1) 1px, transparent 1px);
+    linear-gradient(
+      rgba(80, 90, 100, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(80, 90, 100, 0.1) 1px,
+      transparent 1px
+    );
+
   background-size: 42px 42px;
 }
+
+
+/* =========================================
+   CLOUDS
+========================================= */
 
 .storm-cloud {
   position: absolute;
   z-index: 1;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 85px;
   height: 55px;
+
   border-radius: 50%;
   background: rgba(70, 86, 103, 0.2);
+
   color: #536273;
   font-size: 24px;
 }
@@ -292,11 +326,20 @@
   top: 28%;
 }
 
+
+/* =========================================
+   WIND LINES
+========================================= */
+
 .storm-wind-line {
   position: absolute;
+  z-index: 1;
+
   height: 2px;
   border-radius: 5px;
+
   background: rgba(53, 106, 230, 0.35);
+
   transform: rotate(-20deg);
 }
 
@@ -320,57 +363,105 @@
   transform: rotate(12deg);
 }
 
+
+/* =========================================
+   MAP POINTS
+========================================= */
+
 .storm-point {
   position: absolute;
   z-index: 3;
+
   display: flex;
   align-items: center;
   gap: 6px;
+
   color: #344054;
   font-size: 10px;
   font-weight: 700;
+
+  white-space: nowrap;
 }
 
 .storm-point span {
   width: 11px;
   height: 11px;
+  flex-shrink: 0;
+
   border: 2px solid #ffffff;
   border-radius: 50%;
+
   background: #df504c;
-  box-shadow: 0 0 0 3px rgba(223, 80, 76, 0.18);
+
+  box-shadow:
+    0 0 0 3px rgba(223, 80, 76, 0.18);
 }
+
+
+/* =========================================
+   NORTH
+========================================= */
 
 .point-one {
   top: 22%;
   left: 18%;
 }
 
+
+/* =========================================
+   EAST
+========================================= */
+
 .point-two {
   top: 29%;
   right: 17%;
 }
 
+
+/* =========================================
+   CENTRAL
+   Moved DOWN + LEFT from Kolkata
+========================================= */
+
 .point-three {
-  top: 54%;
-  left: 44%;
+  top: 66%;
+  left: 32%;
 }
+
+
+/* =========================================
+   SOUTH
+========================================= */
 
 .point-four {
   bottom: 18%;
   left: 31%;
 }
 
+
+/* =========================================
+   KOLKATA CENTER
+========================================= */
+
 .storm-map-center {
   position: absolute;
   z-index: 4;
-  top: 52%;
-  left: 52%;
+
+  top: 50%;
+  left: 53%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   gap: 4px;
+
   transform: translate(-50%, -50%);
+
   font-size: 11px;
+  color: #172033;
+
+  white-space: nowrap;
 }
 
 .storm-map-center svg {
@@ -378,16 +469,32 @@
   font-size: 25px;
 }
 
+.storm-map-center strong {
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   MAP LEGEND
+========================================= */
+
 .storm-map-legend {
   position: absolute;
   z-index: 5;
+
   bottom: 15px;
   left: 15px;
+
   display: flex;
   gap: 14px;
+
   padding: 9px 11px;
+
   border-radius: 9px;
+
   background: rgba(255, 255, 255, 0.92);
+
   color: #667085;
   font-size: 10px;
 }
@@ -416,7 +523,10 @@
   background: #70a57c;
 }
 
-/* Risk */
+
+/* =========================================
+   RISK CARD
+========================================= */
 
 .storm-risk-card {
   padding: 25px;
@@ -513,7 +623,10 @@
   margin-top: 6px;
 }
 
-/* Zones */
+
+/* =========================================
+   ZONES
+========================================= */
 
 .storm-zones-section {
   margin-bottom: 24px;
@@ -619,7 +732,10 @@
   font-size: 12px;
 }
 
-/* Response */
+
+/* =========================================
+   RESPONSE
+========================================= */
 
 .storm-response-card {
   display: flex;
@@ -632,8 +748,10 @@
   width: 46px;
   height: 46px;
   flex-shrink: 0;
+
   display: grid;
   place-items: center;
+
   border-radius: 12px;
   background: #eef4ff;
   color: #356ae6;
@@ -655,9 +773,13 @@
   line-height: 1.55;
 }
 
-/* Responsive */
+
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 1100px) {
+
   .storm-indicator-grid,
   .storm-zone-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -668,7 +790,13 @@
   }
 }
 
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 700px) {
+
   .storms-page {
     padding: 20px 16px;
   }
@@ -679,6 +807,7 @@
 
   .storm-status {
     width: 100%;
+    box-sizing: border-box;
   }
 
   .storm-warning {
@@ -697,9 +826,49 @@
   .storm-response-card button {
     width: 100%;
   }
+
+  /*
+    Mobile map positioning
+    Central stays clearly away from Kolkata
+  */
+
+  .storm-map {
+    height: 340px;
+  }
+
+  .point-one {
+    top: 20%;
+    left: 10%;
+  }
+
+  .point-two {
+    top: 27%;
+    right: 8%;
+  }
+
+  .point-three {
+    top: 67%;
+    left: 20%;
+  }
+
+  .point-four {
+    bottom: 13%;
+    left: 10%;
+  }
+
+  .storm-map-center {
+    top: 48%;
+    left: 55%;
+  }
 }
 
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
 @media (max-width: 500px) {
+
   .storms-header h1 {
     font-size: 26px;
   }
@@ -717,5 +886,15 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .point-three {
+    top: 68%;
+    left: 17%;
+  }
+
+  .storm-map-center {
+    top: 47%;
+    left: 56%;
   }
 }

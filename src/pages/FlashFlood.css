@@ -275,6 +275,7 @@
   color: #344054;
   font-size: 10px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .flood-location span {
@@ -296,9 +297,13 @@
   right: 19%;
 }
 
+/*
+  Central moved down and left so it does not collide
+  with the Kolkata center marker.
+*/
 .location-c {
-  top: 52%;
-  left: 43%;
+  top: 66%;
+  left: 31%;
 }
 
 .location-d {
@@ -309,14 +314,15 @@
 .flood-map-center {
   position: absolute;
   z-index: 3;
-  top: 51%;
-  left: 52%;
+  top: 50%;
+  left: 53%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
   transform: translate(-50%, -50%);
   font-size: 11px;
+  white-space: nowrap;
 }
 
 .flood-map-center svg {
@@ -605,6 +611,17 @@
   .flood-action-card button {
     width: 100%;
   }
+
+  /* Keep Central and Kolkata separated on tablet/mobile */
+  .location-c {
+    top: 67%;
+    left: 20%;
+  }
+
+  .flood-map-center {
+    top: 48%;
+    left: 55%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -625,5 +642,16 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
+  }
+
+  /* Extra separation for the smaller map */
+  .location-c {
+    top: 68%;
+    left: 17%;
+  }
+
+  .flood-map-center {
+    top: 47%;
+    left: 56%;
   }
 }

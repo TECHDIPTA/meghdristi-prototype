@@ -335,4 +335,10 @@ button {
     font-size: 25px;
   }
 }
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 10px;
+}
  

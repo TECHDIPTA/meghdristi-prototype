@@ -134,9 +134,11 @@ function Auth({ onLogin }) {
       <div className="auth-left">
 
         <div className="auth-brand">
-          <div className="brand-icon">
-            <FaBolt />
-          </div>
+          <img
+            src="/logo.png"
+            alt="MEGHDRISTI"
+            className="brand-logo"
+          />
 
           <div>
             <strong>MEGHDRISTI</strong>
@@ -211,9 +213,11 @@ function Auth({ onLogin }) {
         <div className="auth-card">
 
           <div className="mobile-brand">
-            <div className="brand-icon">
-              <FaBolt />
-            </div>
+            <img
+              src="/logo.png"
+              alt="MEGHDRISTI"
+              className="brand-logo"
+            />
 
             <strong>MEGHDRISTI</strong>
           </div>

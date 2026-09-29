@@ -132,9 +132,11 @@ function Sidebar({
 
         <div className="sidebar-brand">
 
-          <div className="brand-icon">
-            M
-          </div>
+          <img
+            src="/logo.png"
+            alt="MEGHDRISTI"
+            className="brand-logo"
+          />
 
           <div className="sidebar-brand-text">
 
@@ -198,15 +200,12 @@ function Sidebar({
 
           <div className="user-box">
 
-            <div className="avatar">
-
-              {user?.name
-                ? user.name
-                    .charAt(0)
-                    .toUpperCase()
-                : "U"}
-
-            </div>
+           <div className="avatar">
+  <img
+    src="/logo.png"
+    alt="MEGHDRISTI"
+  />
+</div>
 
             <div className="user-details">
 
@@ -248,4 +247,3 @@ function Sidebar({
 }
 
 export default Sidebar;
-
