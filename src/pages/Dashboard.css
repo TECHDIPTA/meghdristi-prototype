@@ -277,6 +277,7 @@
   color: #63727a;
   font-size: 10px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .region-one {
@@ -318,8 +319,11 @@
   left: 32%;
 }
 
+/* RED MARKERS */
+
 .map-marker {
   position: absolute;
+  z-index: 3;
   display: grid;
   place-items: center;
   width: 24px;
@@ -346,13 +350,20 @@
   left: 51%;
 }
 
+/*
+  South Bengal marker moved lower-left
+  so it doesn't sit on top of the West Bengal center marker.
+*/
 .marker-three {
-  top: 69%;
-  left: 57%;
+  top: 76%;
+  left: 52%;
 }
+
+/* CENTER MARKER */
 
 .map-center {
   position: absolute;
+  z-index: 4;
   left: 50%;
   top: 50%;
   display: flex;
@@ -361,6 +372,7 @@
   gap: 5px;
   transform: translate(-50%, -50%);
   color: #576b77;
+  white-space: nowrap;
 }
 
 .map-center svg {
@@ -372,6 +384,8 @@
   font-size: 11px;
   font-weight: 800;
 }
+
+/* LEGEND */
 
 .map-legend {
   display: flex;
@@ -704,6 +718,17 @@
   .dashboard-alert-btn {
     margin-left: 57px;
   }
+
+  /* Keep South Bengal away from West Bengal marker */
+  .marker-three {
+    top: 76%;
+    left: 48%;
+  }
+
+  .map-center {
+    top: 48%;
+    left: 54%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -739,5 +764,16 @@
   .alert-list {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  /* Extra separation on small screens */
+  .marker-three {
+    top: 79%;
+    left: 43%;
+  }
+
+  .map-center {
+    top: 47%;
+    left: 56%;
   }
 }
