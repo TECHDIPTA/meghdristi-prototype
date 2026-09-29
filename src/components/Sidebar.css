@@ -1,10 +1,11 @@
-
 /* =========================================================
    SIDEBAR
 ========================================================= */
+
 .sidebar {
   width: 265px;
   height: 100vh;
+  height: 100dvh;
   min-height: 0;
 
   position: fixed;
@@ -16,6 +17,8 @@
 
   display: flex;
   flex-direction: column;
+
+  box-sizing: border-box;
 
   padding: 20px 14px;
 
@@ -52,36 +55,12 @@
     1px solid
     rgba(255, 255, 255, 0.08);
 
-  flex-shrink: 0;
-}
-
-.brand-icon {
-  width: 42px;
-  height: 42px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 11px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #19d3d0,
-      #087f82
-    );
-
-  color: #ffffff;
-
-  font-size: 17px;
-  font-weight: 900;
+  flex: 0 0 auto;
 }
 
 .sidebar-brand-text {
   min-width: 0;
+  flex: 1;
 }
 
 .sidebar-brand strong {
@@ -115,6 +94,52 @@
 
 
 /* =========================================================
+   BRAND LOGO
+========================================================= */
+
+.sidebar-brand .brand-logo {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================================================
+   OPTIONAL BRAND ICON
+========================================================= */
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19d3d0,
+      #087f82
+    );
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
    CLOSE BUTTON
 ========================================================= */
 
@@ -144,6 +169,8 @@
   transition:
     background 0.2s ease,
     color 0.2s ease;
+
+  flex-shrink: 0;
 }
 
 .close-sidebar:hover {
@@ -161,14 +188,47 @@
 .sidebar-section {
   padding-top: 28px;
 
-  flex: 1;
+  /*
+    This is the ONLY section that is allowed
+    to scroll.
+  */
+
+  flex: 1 1 auto;
+
   min-height: 0;
 
   overflow-y: auto;
   overflow-x: hidden;
 
   scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(255, 255, 255, 0.18)
+    transparent;
 }
+
+
+/* Chrome / Edge / Safari scrollbar */
+
+.sidebar-section::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-section::-webkit-scrollbar-thumb {
+  background:
+    rgba(255, 255, 255, 0.18);
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
 .sidebar-section-title {
   margin:
@@ -201,9 +261,11 @@
   position: relative;
 
   width: 100%;
+
   min-height: 46px;
 
   display: flex;
+
   align-items: center;
 
   gap: 13px;
@@ -212,6 +274,8 @@
 
   padding:
     0 14px;
+
+  box-sizing: border-box;
 
   border: none;
 
@@ -234,17 +298,29 @@
     box-shadow 0.2s ease;
 }
 
+
+/* =========================================================
+   LINK ICON
+========================================================= */
+
 .sidebar-link-icon {
   width: 18px;
 
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-size: 14px;
 }
+
+
+/* =========================================================
+   LINK LABEL
+========================================================= */
 
 .sidebar-link-label {
   white-space: nowrap;
@@ -288,8 +364,13 @@
     inset 3px 0 #22d3d0;
 }
 
-.sidebar-link.active
-.sidebar-link-icon {
+
+/* IMPORTANT:
+   This selector means:
+   icon inside active link
+*/
+
+.sidebar-link.active .sidebar-link-icon {
   color: #5ee7e3;
 }
 
@@ -299,12 +380,22 @@
 ========================================================= */
 
 .sidebar-bottom {
+  /*
+    Prevent this area from shrinking.
+    It will remain visible while navigation scrolls.
+  */
+
+  flex: 0 0 auto;
+
+  min-height: fit-content;
+
   margin-top: auto;
+
   padding-top: 15px;
-  flex-shrink: 0;
 
   background: #092b43;
 }
+
 
 /* =========================================================
    USER BOX
@@ -312,6 +403,7 @@
 
 .user-box {
   display: flex;
+
   align-items: center;
 
   gap: 10px;
@@ -322,28 +414,48 @@
   border-top:
     1px solid
     rgba(255, 255, 255, 0.08);
+
+  flex-shrink: 0;
 }
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
 
 .avatar {
   width: 36px;
   height: 36px;
+
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
+
   overflow: hidden;
+
   background: #ffffff;
 }
 
 .avatar img {
   width: 32px;
   height: 32px;
+
   object-fit: contain;
+
   display: block;
 }
+
+
+/* =========================================================
+   USER DETAILS
+========================================================= */
+
 .user-details {
   min-width: 0;
 
@@ -395,13 +507,18 @@
 
 .logout-btn {
   width: 100%;
+
   height: 42px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 8px;
+
+  box-sizing: border-box;
 
   border:
     1px solid
@@ -471,6 +588,9 @@
   .sidebar {
     width: 265px;
 
+    height: 100vh;
+    height: 100dvh;
+
     transform:
       translateX(-100%);
 
@@ -504,31 +624,217 @@
 @media (max-width: 500px) {
 
   .sidebar {
-  width: min(285px, 85vw);
-  height: 100vh;
-  min-height: 0;
-  padding: 16px 12px;
-}
+    width: min(285px, 85vw);
+
+    height: 100vh;
+    height: 100dvh;
+
+    min-height: 0;
+
+    box-sizing: border-box;
+
+    padding:
+      12px 12px;
+  }
+
+
+  /* -----------------------------------------
+     BRAND
+  ----------------------------------------- */
 
   .sidebar-brand {
     padding:
-      5px 8px 20px;
+      4px 8px 14px;
+
+    gap: 9px;
   }
 
+  .sidebar-brand .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .sidebar-brand strong {
+    font-size: 14px;
+  }
+
+  .sidebar-brand small {
+    font-size: 8px;
+  }
+
+
+  /* -----------------------------------------
+     NAVIGATION
+  ----------------------------------------- */
+
+  .sidebar-section {
+    padding-top: 16px;
+
+    min-height: 0;
+
+    overflow-y: auto;
+  }
+
+
+  /* -----------------------------------------
+     SECTION HEADINGS
+  ----------------------------------------- */
+
+  .sidebar-section-title {
+    margin-bottom: 7px;
+
+    padding:
+      0 11px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .sidebar-heading {
+    margin-top: 18px;
+  }
+
+
+  /* -----------------------------------------
+     LINKS
+  ----------------------------------------- */
+
   .sidebar-link {
-    min-height: 44px;
+    min-height: 42px;
+
+    margin-bottom: 3px;
 
     padding:
       0 12px;
+
+    gap: 11px;
+
+    font-size: 10.5px;
   }
 
-  .sidebar-section {
-    padding-top: 22px;
+  .sidebar-link-icon {
+    width: 17px;
+
+    font-size: 13px;
+  }
+
+
+  /* -----------------------------------------
+     BOTTOM USER AREA
+  ----------------------------------------- */
+
+  .sidebar-bottom {
+    padding-top: 10px;
+
+    flex-shrink: 0;
   }
 
   .user-box {
     padding:
-      15px 6px;
+      10px 6px;
+  }
+
+  .avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .avatar img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .user-box strong {
+    max-width: 155px;
+
+    font-size: 10.5px;
+  }
+
+  .user-box small {
+    max-width: 155px;
+
+    font-size: 8.5px;
+  }
+
+
+  /* -----------------------------------------
+     LOGOUT
+  ----------------------------------------- */
+
+  .logout-btn {
+    height: 38px;
+
+    font-size: 10.5px;
+  }
+
+  .logout-btn svg {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   VERY SHORT MOBILE SCREENS
+   Example: 667px height phones
+========================================================= */
+
+@media (max-width: 500px) and (max-height: 700px) {
+
+  .sidebar {
+    padding:
+      8px 10px;
+  }
+
+  .sidebar-brand {
+    padding:
+      2px 6px 10px;
+  }
+
+  .sidebar-brand .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .sidebar-section {
+    padding-top: 10px;
+  }
+
+  .sidebar-section-title {
+    margin-bottom: 5px;
+  }
+
+  .sidebar-heading {
+    margin-top: 12px;
+  }
+
+  .sidebar-link {
+    min-height: 38px;
+
+    margin-bottom: 2px;
+  }
+
+  .sidebar-bottom {
+    padding-top: 6px;
+  }
+
+  .user-box {
+    padding:
+      7px 5px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .avatar img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logout-btn {
+    height: 36px;
   }
 }
 
@@ -545,9 +851,4 @@
   .close-sidebar {
     transition: none;
   }
-}
-.sidebar-brand .brand-logo {
-  width: 50px;
-  height: 50px;
-  flex-shrink: 0;
 }
