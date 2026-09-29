@@ -389,6 +389,8 @@
 
 .map-legend {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 18px;
   padding: 15px 21px 19px;
@@ -397,6 +399,7 @@
 .map-legend > div {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
   color: #727d8c;
   font-size: 11px;
@@ -405,6 +408,7 @@
 .legend-dot {
   width: 8px;
   height: 8px;
+  flex-shrink: 0;
   border-radius: 50%;
 }
 
@@ -423,7 +427,6 @@
 .legend-dot.critical {
   background: #b83b48;
 }
-
 /* AI */
 
 .ai-card {
