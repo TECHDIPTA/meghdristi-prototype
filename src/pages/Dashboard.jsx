@@ -214,28 +214,6 @@ function Dashboard() {
 
           </div>
 
-          <div className="map-legend">
-            <div>
-              <span className="legend-dot low"></span>
-              Low Risk
-            </div>
-
-            <div>
-              <span className="legend-dot moderate"></span>
-              Moderate
-            </div>
-
-            <div>
-              <span className="legend-dot high"></span>
-              High Risk
-            </div>
-
-            <div>
-              <span className="legend-dot critical"></span>
-              Critical
-            </div>
-          </div>
-
         </div>
 
         {/* AI ASSESSMENT */}

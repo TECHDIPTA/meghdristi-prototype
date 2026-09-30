@@ -1,8 +1,20 @@
+/* =========================================================
+   DASHBOARD PAGE CONTAINER
+========================================================= */
+
 .dashboard-page {
-  padding: 30px;
-  max-width: 1700px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px 36px 60px;
+  max-width: 1600px;
   margin: 0 auto;
+  overflow-y: auto;
 }
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .dashboard-heading {
   display: flex;
@@ -20,32 +32,35 @@
   font-weight: 800;
   letter-spacing: 1.5px;
   margin-bottom: 7px;
+  text-transform: uppercase;
 }
 
 .dashboard-heading h2 {
   margin: 0;
   color: #172033;
-  font-size: 30px;
-  line-height: 1.15;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .dashboard-heading p {
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   color: #7b8495;
   font-size: 14px;
 }
 
 .dashboard-live {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 14px;
+  padding: 7px 14px;
   border: 1px solid #dce5df;
   border-radius: 999px;
   background: #f7fbf8;
   color: #2c8a55;
   font-size: 12px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .live-dot {
@@ -56,14 +71,16 @@
   box-shadow: 0 0 0 4px rgba(56, 161, 105, 0.12);
 }
 
-/* ALERT */
+/* =========================================================
+   ALERT BANNER
+========================================================= */
 
 .dashboard-alert {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 16px 18px;
-  margin-bottom: 22px;
+  gap: 16px;
+  padding: 14px 20px;
+  margin-bottom: 24px;
   border: 1px solid #f3dfc9;
   border-radius: 14px;
   background: #fffaf4;
@@ -72,12 +89,13 @@
 .dashboard-alert-icon {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
-  border-radius: 11px;
+  border-radius: 10px;
   background: #fff0dd;
   color: #d97816;
+  font-size: 18px;
 }
 
 .dashboard-alert-content {
@@ -88,6 +106,7 @@
   display: block;
   color: #3b3027;
   font-size: 14px;
+  font-weight: 700;
 }
 
 .dashboard-alert-content p {
@@ -97,30 +116,33 @@
 }
 
 .dashboard-alert-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   color: #bb6714;
   text-decoration: none;
   font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
-/* STATS */
+/* =========================================================
+   STATS GRID
+========================================================= */
 
 .dashboard-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .dashboard-stat-card {
-  padding: 20px;
+  padding: 18px 20px;
   border: 1px solid #e6eaf0;
   border-radius: 16px;
   background: #ffffff;
-  box-shadow: 0 5px 18px rgba(20, 32, 55, 0.035);
+  box-shadow: 0 4px 14px rgba(20, 32, 55, 0.03);
 }
 
 .stat-card-top {
@@ -135,9 +157,10 @@
 .stat-icon {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
+  font-size: 15px;
 }
 
 .stat-icon.danger {
@@ -162,9 +185,10 @@
 
 .dashboard-stat-card > strong {
   display: block;
-  margin: 14px 0 8px;
+  margin: 12px 0 6px;
   color: #172033;
   font-size: 28px;
+  font-weight: 700;
 }
 
 .stat-footer {
@@ -175,29 +199,22 @@
   font-weight: 700;
 }
 
-.danger-text {
-  color: #d94b4b;
-}
+.danger-text { color: #d94b4b; }
+.orange-text { color: #d4811f; }
+.blue-text   { color: #4285c5; }
+.green-text  { color: #3a9762; }
 
-.orange-text {
-  color: #d4811f;
-}
-
-.blue-text {
-  color: #4285c5;
-}
-
-.green-text {
-  color: #3a9762;
-}
-
-/* CARDS */
+/* =========================================================
+   CARDS COMMON
+========================================================= */
 
 .dashboard-card {
   border: 1px solid #e6eaf0;
   border-radius: 17px;
   background: #ffffff;
-  box-shadow: 0 5px 18px rgba(20, 32, 55, 0.035);
+  box-shadow: 0 4px 14px rgba(20, 32, 55, 0.03);
+  display: flex;
+  flex-direction: column;
 }
 
 .card-header {
@@ -205,13 +222,14 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 15px;
-  padding: 20px 21px 15px;
+  padding: 20px 22px 14px;
 }
 
 .card-header h3 {
   margin: 0;
   color: #172033;
   font-size: 17px;
+  font-weight: 700;
 }
 
 .header-icon {
@@ -234,7 +252,9 @@
   background: #43a868;
 }
 
-/* MAIN GRID */
+/* =========================================================
+   MAIN GRID
+========================================================= */
 
 .dashboard-main-grid {
   display: grid;
@@ -243,23 +263,24 @@
   margin-bottom: 22px;
 }
 
-/* MAP */
+/* =========================================================
+   MAP
+========================================================= */
 
 .risk-map {
   position: relative;
-  height: 370px;
-  margin: 0 20px;
+  height: 340px;
+  margin: 0 20px 20px;
   overflow: hidden;
   border: 1px solid #e4e9ef;
   border-radius: 13px;
-  background:
-    linear-gradient(135deg, #f5f8fa, #e9eff2);
+  background: linear-gradient(135deg, #f5f8fa, #e9eff2);
 }
 
 .map-grid {
   position: absolute;
   inset: 0;
-  opacity: 0.55;
+  opacity: 0.5;
   background-image:
     linear-gradient(#dce4e8 1px, transparent 1px),
     linear-gradient(90deg, #dce4e8 1px, transparent 1px);
@@ -268,14 +289,14 @@
 
 .map-region {
   position: absolute;
-  border: 1px solid rgba(82, 107, 120, 0.2);
-  background: rgba(211, 224, 224, 0.5);
+  border: 1px solid rgba(82, 107, 120, 0.25);
+  background: rgba(211, 224, 224, 0.55);
 }
 
 .map-region span {
   position: absolute;
-  color: #63727a;
-  font-size: 10px;
+  color: #556773;
+  font-size: 11px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -287,24 +308,16 @@
   height: 25%;
   border-radius: 50% 40% 55% 35%;
 }
-
-.region-one span {
-  top: 42%;
-  left: 38%;
-}
+.region-one span { top: 38%; left: 34%; }
 
 .region-two {
   top: 8%;
   left: 35%;
-  width: 25%;
+  width: 26%;
   height: 24%;
   border-radius: 60% 35% 40% 50%;
 }
-
-.region-two span {
-  top: 40%;
-  left: 28%;
-}
+.region-two span { top: 38%; left: 24%; }
 
 .region-three {
   top: 59%;
@@ -313,70 +326,47 @@
   height: 27%;
   border-radius: 35% 55% 45% 60%;
 }
-
-.region-three span {
-  top: 45%;
-  left: 32%;
-}
-
-/* RED MARKERS */
+.region-three span { top: 40%; left: 30%; }
 
 .map-marker {
   position: absolute;
   z-index: 3;
   display: grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: rgba(214, 77, 77, 0.16);
 }
 
 .map-marker span {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #d64d4d;
-  box-shadow: 0 0 0 5px rgba(214, 77, 77, 0.15);
+  box-shadow: 0 0 0 4px rgba(214, 77, 77, 0.18);
 }
 
-.marker-one {
-  top: 50%;
-  left: 62%;
-}
-
-.marker-two {
-  top: 25%;
-  left: 51%;
-}
-
-/*
-  South Bengal marker moved lower-left
-  so it doesn't sit on top of the West Bengal center marker.
-*/
-.marker-three {
-  top: 76%;
-  left: 52%;
-}
-
-/* CENTER MARKER */
+.marker-one   { top: 50%; left: 62%; }
+.marker-two   { top: 25%; left: 51%; }
+.marker-three { top: 76%; left: 52%; }
 
 .map-center {
   position: absolute;
   z-index: 4;
-  left: 50%;
+  left: 48%;
   top: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   transform: translate(-50%, -50%);
-  color: #576b77;
+  color: #3b5066;
   white-space: nowrap;
 }
 
 .map-center svg {
-  font-size: 25px;
+  font-size: 24px;
   color: #d97816;
 }
 
@@ -385,49 +375,9 @@
   font-weight: 800;
 }
 
-/* LEGEND */
-
-.map-legend {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  padding: 15px 21px 19px;
-}
-
-.map-legend > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  color: #727d8c;
-  font-size: 11px;
-}
-
-.legend-dot {
-  width: 8px;
-  height: 8px;
-  flex-shrink: 0;
-  border-radius: 50%;
-}
-
-.legend-dot.low {
-  background: #5eaa75;
-}
-
-.legend-dot.moderate {
-  background: #e2aa45;
-}
-
-.legend-dot.high {
-  background: #dc7057;
-}
-
-.legend-dot.critical {
-  background: #b83b48;
-}
-/* AI */
+/* =========================================================
+   AI RISK ASSESSMENT (FIXED SCORE CIRCLE)
+========================================================= */
 
 .ai-card {
   padding-bottom: 20px;
@@ -436,8 +386,8 @@
 .ai-icon {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   background: #f0edff;
   color: #7156c8;
@@ -447,54 +397,60 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  padding: 7px 21px 20px;
+  padding: 10px 22px 20px;
 }
 
+/* FIXED CIRCLE NUMBER CENTERING */
 .score-circle {
+  box-sizing: border-box;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
-  width: 92px;
-  height: 92px;
+  width: 90px;
+  height: 90px;
   flex-shrink: 0;
-  padding-top: 30px;
-  border: 7px solid #e9ddcf;
+  padding: 0;
+  border: 7px solid #fae4cb;
+  border-top-color: #d88738;
   border-right-color: #d88738;
-  border-bottom-color: #d88738;
   border-radius: 50%;
 }
 
 .score-circle strong {
   color: #172033;
-  font-size: 25px;
+  font-size: 26px;
+  line-height: 1;
 }
 
 .score-circle span {
   color: #8b94a2;
-  font-size: 10px;
+  font-size: 11px;
+  margin-left: 2px;
 }
 
 .ai-score > div:last-child strong {
+  display: block;
   color: #c26f20;
   font-size: 16px;
+  font-weight: 700;
 }
 
 .ai-score p {
-  max-width: 190px;
+  max-width: 220px;
   margin: 5px 0 0;
   color: #7a8493;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .risk-factor {
-  padding: 9px 21px;
+  padding: 8px 22px;
 }
 
 .risk-factor > div:first-child {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .risk-factor span,
@@ -502,13 +458,8 @@
   font-size: 11px;
 }
 
-.risk-factor span {
-  color: #7b8594;
-}
-
-.risk-factor strong {
-  color: #394355;
-}
+.risk-factor span { color: #7b8594; }
+.risk-factor strong { color: #394355; font-weight: 700; }
 
 .progress {
   height: 6px;
@@ -529,17 +480,24 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin: 16px 21px 0;
-  padding: 11px 15px;
-  border-radius: 9px;
+  margin: 18px 22px 0;
+  padding: 12px 16px;
+  border-radius: 10px;
   background: #172033;
   color: #ffffff;
   text-decoration: none;
   font-size: 12px;
   font-weight: 700;
+  transition: opacity 0.2s;
 }
 
-/* LOWER */
+.full-width-btn:hover {
+  opacity: 0.92;
+}
+
+/* =========================================================
+   LOWER GRID & WEATHER & ALERTS
+========================================================= */
 
 .dashboard-lower-grid {
   display: grid;
@@ -554,23 +512,19 @@
 .weather-main {
   display: flex;
   align-items: center;
-  gap: 17px;
-  padding: 10px 21px 20px;
+  gap: 18px;
+  padding: 10px 22px 20px;
 }
 
 .weather-main > svg {
-  font-size: 43px;
+  font-size: 42px;
   color: #5a91c7;
-}
-
-.weather-main div {
-  display: flex;
-  flex-direction: column;
 }
 
 .weather-main strong {
   color: #172033;
   font-size: 30px;
+  line-height: 1.1;
 }
 
 .weather-main span {
@@ -582,18 +536,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid #edf0f4;
-  padding: 16px 21px 0;
+  padding: 16px 22px 0;
 }
 
 .weather-details div {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
 .weather-details svg {
   color: #7a899a;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .weather-details span {
@@ -614,14 +568,14 @@
 }
 
 .alert-list {
-  padding: 0 21px 12px;
+  padding: 0 22px 10px;
 }
 
 .recent-alert {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 13px 0;
+  padding: 12px 0;
   border-top: 1px solid #edf0f4;
 }
 
@@ -632,28 +586,19 @@
   height: 36px;
   flex-shrink: 0;
   border-radius: 9px;
+  font-size: 14px;
 }
 
-.recent-alert-icon.rain {
-  color: #4b87bd;
-  background: #edf6fd;
-}
-
-.recent-alert-icon.wind {
-  color: #8a6dba;
-  background: #f5effd;
-}
-
-.recent-alert-icon.flood {
-  color: #d06452;
-  background: #fff1ed;
-}
+.recent-alert-icon.rain  { color: #4b87bd; background: #edf6fd; }
+.recent-alert-icon.wind  { color: #8a6dba; background: #f5effd; }
+.recent-alert-icon.flood { color: #d06452; background: #fff1ed; }
 
 .recent-alert-info {
   display: flex;
   flex-direction: column;
   gap: 3px;
   flex: 1;
+  min-width: 0;
 }
 
 .recent-alert-info strong {
@@ -671,6 +616,7 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 4px;
+  flex-shrink: 0;
 }
 
 .recent-alert-time strong {
@@ -686,13 +632,14 @@
   font-size: 9px;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media (max-width: 1100px) {
   .dashboard-stats {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .dashboard-main-grid,
   .dashboard-lower-grid {
     grid-template-columns: 1fr;
@@ -701,82 +648,20 @@
 
 @media (max-width: 700px) {
   .dashboard-page {
-    padding: 20px 15px;
+    padding: 20px 16px 40px;
   }
-
   .dashboard-heading {
-    align-items: flex-start;
     flex-direction: column;
-  }
-
-  .dashboard-heading h2 {
-    font-size: 25px;
-  }
-
-  .dashboard-alert {
     align-items: flex-start;
-    flex-wrap: wrap;
   }
-
-  .dashboard-alert-btn {
-    margin-left: 57px;
-  }
-
-  /* Keep South Bengal away from West Bengal marker */
-  .marker-three {
-    top: 76%;
-    left: 48%;
-  }
-
-  .map-center {
-    top: 48%;
-    left: 54%;
+  .dashboard-alert {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
 @media (max-width: 480px) {
   .dashboard-stats {
     grid-template-columns: 1fr;
-  }
-
-  .dashboard-alert-btn {
-    margin-left: 0;
-  }
-
-  .risk-map {
-    height: 290px;
-    margin: 0 12px;
-  }
-
-  .card-header {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .map-legend {
-    padding-left: 15px;
-    padding-right: 15px;
-    gap: 10px;
-  }
-
-  .weather-details {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .alert-list {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  /* Extra separation on small screens */
-  .marker-three {
-    top: 79%;
-    left: 43%;
-  }
-
-  .map-center {
-    top: 47%;
-    left: 56%;
   }
 }
